@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        section {
+            margin: 2rem;
+        }
+        form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input[type="text"], input[type="tel"] {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <section>
+        <h2>About Me</h2>
+        <p>This is a customizable web page hosted on GitHub Pages!</p>
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <label for="name">Masukkan Nama:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="phone">Masukkan Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submission default
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            document.getElementById('responseMessage').innerText = 'Terima kasih, ' + name + '! Data Anda sudah diterima.';
+        });
+    </script>
+</body>
+</html>
